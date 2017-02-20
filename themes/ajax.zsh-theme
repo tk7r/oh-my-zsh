@@ -18,14 +18,15 @@ function check_git_prompt_info() {
 }
 
 # information blocks
-AJAX_USER_HOST_INFO='%{$fg_bold[white]%}%{$fg_bold[cyan]%}%n @ %m%{$fg_bold[white]%}'
-AJAX_LOCATION_INFO='  :  %{$fg_bold[white]%}%~'
+AJAX_USER_HOST_INFO='%{$fg_bold[white]%}%{$fg_bold[cyan]%}%n @ %m'
+AJAX_LOCATION_INFO='%{$fg_bold[white]%}  :  %{$fg_bold[white]%}%~'
 AJAX_GIT_INFO='%{$fg[yellow]%}$(git_prompt_short_sha)$(check_git_prompt_info)'
+AJAX_COMMAND_NUMBER='%{$fg_bold[white]%}  :  %{$fg[red]%}%!'
 
 # assemble lines
 AJAX_LINE_FINISHER=''
 #$FG[237]------------------------------------------------------------%{$reset_color%}'
-AJAX_LINE_INFO="${AJAX_USER_HOST_INFO}${AJAX_LOCATION_INFO}${AJAX_GIT_INFO}%{$reset_color%}"
+AJAX_LINE_INFO="${AJAX_USER_HOST_INFO}${AJAX_LOCATION_INFO}${AJAX_GIT_INFO}${AJAX_COMMAND_NUMBER}%{$reset_color%}"
 AJAX_LINE_PROMPT='%F{blue}[%f '
 
 AJAX_LINE_PREFIX='%{$fg_bold[white]%}[%{$fg[red]%}$(virtualenv_prompt_info)%{$fg_bold[white]%}] %{$reset_color%}'
@@ -48,5 +49,5 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%} ✓"
 # Add a yellow ✗ if the branch is dirty
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%} ✗"
 
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE="  :  ➤ %{$fg_bold[yellow]%}"
+ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{$fg_bold[white]%}  :  ➤ %{$fg_bold[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$fg[white]%}|"
