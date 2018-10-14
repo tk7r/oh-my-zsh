@@ -22,11 +22,12 @@ AJAX_USER_HOST_INFO='%{$fg_bold[white]%}%{$fg_bold[cyan]%}%n @ %m'
 AJAX_LOCATION_INFO='%{$fg_bold[white]%}  :  %{$fg_bold[white]%}%~'
 AJAX_GIT_INFO='%{$fg[yellow]%}$(git_prompt_short_sha)$(check_git_prompt_info)'
 AJAX_COMMAND_NUMBER='%{$fg_bold[white]%}  :  %{$fg[red]%}%!'
+AJAX_COMMAND_ENVIRONMENT='%{$fg_bold[white]%}  :  JENV[$(jenv_prompt_info)]'
 
 # assemble lines
 AJAX_LINE_FINISHER=''
 #$FG[237]------------------------------------------------------------%{$reset_color%}'
-AJAX_LINE_INFO="${AJAX_USER_HOST_INFO}${AJAX_LOCATION_INFO}${AJAX_GIT_INFO}${AJAX_COMMAND_NUMBER}%{$reset_color%}"
+AJAX_LINE_INFO="${AJAX_USER_HOST_INFO}${AJAX_LOCATION_INFO}${AJAX_GIT_INFO}${AJAX_COMMAND_NUMBER}${AJAX_COMMAND_ENVIRONMENT}%{$reset_color%}"
 AJAX_LINE_PROMPT='%F{blue}[%f '
 
 AJAX_LINE_PREFIX='%{$fg_bold[white]%}[%{$fg[red]%}$(virtualenv_prompt_info)%{$fg_bold[white]%}] %{$reset_color%}'
